@@ -14,7 +14,7 @@ def estimateAmosphericLight(darkchannel,img):
     h,w = darkchannel.shape
     tempimg = darkchannel.reshape(h*w)
     size=tempimg.shape[0]
-    indexes = tempimg.argsort()[::-1][:int(size*(0.001))]
+    indexes = tempimg.argsort()[::-1][:int(size*(0.1))]
     tempimg2 = img.reshape(size,3)
     max = np.sum(tempimg2[indexes[0]])
     maxindex = indexes[0]
@@ -23,13 +23,11 @@ def estimateAmosphericLight(darkchannel,img):
         if max < temp:
             max = temp
             maxindex = indexes[i]
-    
     return tempimg2[maxindex]
 
 def estimateTransmission(img,A,omega,kernel_size):
     tempimg = np.zeros(img.shape,dtype='float')
     for i in range(3):
         tempimg[:,:,i] = img[:,:,i]/A[i]
-    print(img.dtype)
     transmission = 1 - omega * getdarkChannel(tempimg,kernel_size)
     return transmission

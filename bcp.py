@@ -14,6 +14,5 @@ def estimateTransmission(img,A,omega,kernel_size):
     tempimg = np.zeros(img.shape,dtype='float')
     for i in range(3):
         tempimg[:,:,i] = img[:,:,i]/A[i]
-    print(img.dtype)
     transmission = (getBrightChannel(tempimg,kernel_size) - 1 )/(1/np.max(A) - 1)
     return transmission
