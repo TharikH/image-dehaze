@@ -16,7 +16,7 @@ def estimateAmosphericLight(darkchannel,img):
     size=tempimg.shape[0]
     indexes = tempimg.argsort()[::-1][:int(size*(0.1))]
     tempimg2 = img.reshape(size,3)
-    print(tempimg2)
+    # print(tempimg2)
     max = np.sum(tempimg2[indexes[0]])
     maxindex = indexes[0]
     for i in range(indexes.shape[0]):

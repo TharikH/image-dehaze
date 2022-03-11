@@ -2,14 +2,16 @@ import os
 import integrate
 import evaluation
 import cv2
+import evaluation_store
 
 original_path = "dataset/data/original_images/"
 training_path = "dataset/data/training_images/"
 
-clear_image_src='out9.jpg'
-
-list_of_metrics_of_dcp=[]
-list_of_metrics_of_erc=[]
+list_of_dcp_ssim=[]
+list_of_erc_ssim=[]
+list_of_dcp_psnr=[]
+list_of_erc_psnr=[]
+list_of_train_files=[]
 
 files=os.listdir(original_path)
 for original_file in files:
@@ -21,14 +23,18 @@ for original_file in files:
          training_name_left=training_file[5:]
          training_name_right=training_name_left[:-8]
          if right_name_split==training_name_right:
-             print(original_path+original_file)
-             print(training_path+training_file)
              clear_img=cv2.imread(original_path+original_file)
-             dcp_img,erc_img = integrate.getResult(training_path+training_file)
-             list_of_metrics_of_dcp.append((evaluation.evaluate(dcp_img,clear_img,1),evaluation.evaluate(dcp_img,clear_img,2)))
-             list_of_metrics_of_erc.append((evaluation.evaluate(erc_img,clear_img,1),evaluation.evaluate(erc_img,clear_img,2)))
-             print(list_of_metrics_of_dcp,list_of_metrics_of_erc)
-             exit(0)
+             dcp_img,erc_img = integrate.getResult(training_path+training_file,original_path+original_file)
+            #  list_of_dcp_ssim.append(evaluation.evaluate(dcp_img,clear_img,1))
+            #  list_of_erc_ssim.append(evaluation.evaluate(dcp_img,clear_img,1))
+            #  list_of_dcp_psnr.append(evaluation.evaluate(dcp_img,clear_img,2))
+            #  list_of_erc_psnr.append(evaluation.evaluate(dcp_img,clear_img,2))
+            #  list_of_train_files.append(training_file)
+             cv2.imshow("dcp",dcp_img)
+             cv2.imshow("bcp",erc_img)
+             cv2.waitKey();
+
+evaluation_store.store(list_of_dcp_psnr,list_of_dcp_ssim,list_of_erc_psnr,list_of_erc_ssim,list_of_train_files)
 
 
 
