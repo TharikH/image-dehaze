@@ -1,0 +1,34 @@
+1 is waiting at Starchild Numerology.
+6 is waiting at Starchild Numerology.
+[30 is waiting at Starchild Numerology.]
+Go to Starchild Numerology: west 1st left, 2nd right, 1st left, 1st left, 2nd left.
+Pickup a passenger going to Multiplication Station.
+Pickup a passenger going to Cyclone.
+[Pickup a passenger going to Sunny Skies Park.]
+Go to Cyclone: west 1st right, 3rd left, 1st right.
+[Go to Rob's Rest: south 2nd right, 1st right.]
+Pickup a passenger going to Multiplication Station.
+Pickup a passenger going to The Underground.
+Go to Multiplication Station: south 1st left, 2nd right, 4th left.
+[B]
+Pickup a passenger going to Joyless Park.
+[Pickup a passenger going to Addition Alley.]
+Go to Fueler Up: north 2nd left, 1st left.
+Go to The Underground: north.
+Switch to plan "C" if no one is waiting.
+Pickup a passenger going to Cyclone.
+Go to Joyless Park: north 1st right.
+Go to Cyclone: west 1st right, 2nd left, 2nd left.
+Pickup a passenger going to Multiplication Station.
+Pickup a passenger going to The Underground.
+Go to Joyless Park: north 2nd right, 2nd right, 2nd left.
+Pickup a passenger going to Multiplication Station.
+Go to Multiplication Station: west 1st left, 1st left, 1st right.
+Switch to plan "B".
+[C]
+Go to Joyless Park: north 1st right.
+Pickup a passenger going to The Babelfishery.
+Go to The Babelfishery: west 1st left.
+Pickup a passenger going to Post Office.
+Go to Post Office: north 1st left, 1st right.
+Go to the Taxi Garage: south 1st left, 1st left, 2nd right.
